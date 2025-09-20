@@ -1,0 +1,25 @@
+# Compilação
+bin/
+obj/
+
+# Configurações de usuário
+*.user
+*.suo
+*.userosscache
+*.sw?
+*.log
+
+# VS Code / Visual Studio
+.vscode/
+.vs/
+
+# Configurações locais
+appsettings.Development.json
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Publicação
+publish/
