@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  api:
+    build: .
+    container_name: projectcrud-api
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__AppDbConnectionString=Server=db;Port=3306;Database=ProjectCrudDb;Uid=root;Pwd=projectcrud123;
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: projectcrud-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: projectcrud123
+      MYSQL_DATABASE: ProjectCrudDb
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

@@ -23,3 +23,7 @@ desktop.ini
 
 # Publicação
 publish/
+
+# Docker
+docker-compose.override.yml
+*.env
